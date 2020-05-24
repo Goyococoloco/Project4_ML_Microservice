@@ -1,0 +1,36 @@
+$ ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "johnsmicroservicev2" already exists
+NAME                  READY   STATUS             RESTARTS   AGE
+johnsmicroservicev1   0/1     ImagePullBackOff   0          88m
+johnsmicroservicev2   1/1     Running            0          38m
+Error from server (NotFound): deployments.apps "johnsmicroservicev2" not found
+X Service 'johnsmicroservicev2' was not found in 'default' namespace.
+You may select another namespace by using 'minikube service johnsmicroservicev2 -n <namespace>'. Or list out all the services using 'minikube service list'
+Forwarding from 127.0.0.1:8000 -> 80
+$ kubectl logs johnsmicroservicev2
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 169-914-168
+[2020-05-24 22:55:34,128] INFO in app: JSON payload:
+
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+
+[2020-05-24 22:55:34,236] INFO in app: Inference payload DataFrame:
+
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+
+     0  6.575  296.0     15.3  396.9   4.98
+
+[2020-05-24 22:55:34,286] INFO in app: Scaling Payload:
+
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+
+     0  6.575  296.0     15.3  396.9   4.98
+
+[2020-05-24 22:55:34,328] INFO in app: Output Prediction Value: [20.35373177134412]
