@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![<Goyococoloco>](https://circleci.com/gh/Goyococoloco/Project4_ML_Microservice.svg?style=svg)](https://app.circleci.com/pipelines/github/Goyococoloco/Project4_ML_Microservice/10/workflows/e8b3190a-4c4d-4010-8503-2bf7fbf9588c/jobs/19/steps)
 
 ## Project Overview
 
